@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
+import Card from 'react-bootstrap/Card';
+
 
 function ArticleComponent(props){
 const {data} = props;
@@ -27,16 +34,30 @@ return (
   {
   currentItems.map(a => (
 
-  <article className='article__container' key={a.url}>
-    <div>
-      <h2 className='article__title'> {a.title} </h2>
+    <Container>
+<Row >
+                   
+   <Card className='mx-auto my-4' style={{ width: '50rem' }} key={a.url}>
+  
+   <Col md="6">   <Card.Img variant="top" src={a.urlToImage} /> </Col>
+      <Col md="12">     
+       <Card.Body>
+        <Card.Title>{a.title}</Card.Title>
+        <Card.Text>
+        {a.content} .
+        </Card.Text>
+       
+      </Card.Body>
+      </Col>
 
+    </Card>
 
-      <p className='article__parrafo'> {a.content} </p>
-      <span className='article__author'>Escrito por: {a.author} </span>
-    </div>
-    <img className='article__image' src={a.urlToImage} />
-  </article>
+    </Row>
+
+   
+  </Container>
+
+ 
 
 
 
