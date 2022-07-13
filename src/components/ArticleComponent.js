@@ -44,9 +44,17 @@ return (
   ))
   }
 
-  <ReactPaginate breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} pageRangeDisplayed={3}
-    pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} containerClassName="pagination"
-    pageLinkClassName="page-num" previousLinkClassName="page-num" nextLinkClassName="page-num"
+  <ReactPaginate breakLabel="..." 
+  nextLabel="next >" 
+  onPageChange={handlePageClick} 
+  pageRangeDisplayed={3}
+    pageCount={pageCount} 
+    previousLabel="< previous" 
+    renderOnZeroPageCount={null} 
+    containerClassName="pagination"
+    pageLinkClassName="page-num" 
+    previousLinkClassName="page-num"
+    nextLinkClassName="page-num"
     activeLinkClassName="active" />
 </>
 );

@@ -6,7 +6,7 @@ function HomeComponent(){
     return(
 
         <div>
-            <img className="home__image" src={home}/>
+            <img width="300px" className="home__image" src={home}/>
         </div>
     )
 }

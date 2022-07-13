@@ -46,9 +46,9 @@
 }
 
 .home__image{
-  width: 550px;
-  height: 500px;
-  padding: 4rem;
+  min-width: 300px;
+
+  margin: 0 auto;
 }
 
 .search{

@@ -2,8 +2,10 @@
 import { useState,useEffect, useRef } from "react";
 import SearchComponent from "./SearchComponent";
 import HomeComponent from "./HomeComponent";
-
-
+import LondingComponent from "./LondingComponent"
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 
 
@@ -11,6 +13,7 @@ import HomeComponent from "./HomeComponent";
 import axios from "axios";
 import api from "../api"
 import ArticleComponent from "./ArticleComponent";
+import HeaderComponent from "./HeaderComponent";
 
 function AppComponent(){
   const list = []
@@ -75,8 +78,23 @@ setSearch(inputRef.current.value)
     return(
         <>
       
-        <div>
+       
         
+       
+     
+     
+
+    
+    
+       
+
+      <HeaderComponent/>
+     
+
+      <Container>
+    
+      <Row className="justify-content-center">
+        <Col md="auto">
         <SearchComponent
         search ={search}
         inputRef={inputRef}
@@ -85,13 +103,20 @@ setSearch(inputRef.current.value)
         searchSubmit = {heandleSutmit}
         searchEnter = {searchEnter}
         />
-     <b>{ !search ? <HomeComponent/> : "" } </b> 
-     <h1>{ Londing? "cargando": "" } </h1> 
-    
-       
+        </Col>
+        <Col md="auto">
 
-      <ArticleComponent data={articulos} />
-      </div> 
+        <b>{ !search ? <HomeComponent/> : "" } </b>
+        </Col>
+        <Col  md="auto">
+        <div>{ Londing? <LondingComponent/>: "" } </div> 
+        </Col>
+        <Col  md="auto">
+        <ArticleComponent data={articulos} />
+        </Col>
+      </Row>
+      
+    </Container>
 
         </>
     )

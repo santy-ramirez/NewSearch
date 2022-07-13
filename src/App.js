@@ -1,13 +1,18 @@
 
 import './App.css';
-import AppComponent from './components/AppComponent';
 
+import HeaderComponent from './components/HeaderComponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeroComponent from './components/HeroComponent';
 
 
 function App() {
   return (
     <div className="App">
-      <AppComponent/>
+      <HeaderComponent/>
+     <HeroComponent></HeroComponent>
+      
+      
    
     </div>
   );
