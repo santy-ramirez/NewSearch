@@ -1,6 +1,6 @@
-import Stack from "react-bootstrap/Stack";
+//import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
-import image from "./home.jpg";
+import image from "../home.jpg";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -27,7 +27,7 @@ function HeroComponent() {
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  the bulk of the cards content.
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
@@ -41,7 +41,7 @@ function HeroComponent() {
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  the bulk of the cards content.
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
@@ -54,7 +54,7 @@ function HeroComponent() {
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  the bulk of the cards content.
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>

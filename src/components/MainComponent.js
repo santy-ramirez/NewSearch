@@ -8,27 +8,31 @@ import Container from "react-bootstrap/Container";
 
 import axios from "axios";
 import api from "../api";
-import ArticleComponent from "./ArticleComponent";
+import ArticleComponent from "./PaginationComponent";
 import HeaderComponent from "./HeaderComponent";
 
-function AppComponent() {
+function MainComponent() {
   const list = [];
   const [search, setSearch] = useState("");
   const inputRef = useRef(null);
+  const [resultado, setResultados] = useState(0);
   const [inputButoon, setInputButoon] = useState(true);
   const [Londing, setLonding] = useState(false);
   const [articulos, setArticulos] = useState(list);
 
   console.log("soy el search:" + search);
+  console.log(resultado.totalResults);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLonding(true);
         const datas = await axios.get(
-          `https://newsapi.org/v2/everything?q=${search}&apiKey=${api}&page=1&pageSize=30&language=es`
+          `https://newsapi.org/v2/everything?q=${search}&apiKey=${api}&page=1&pageSize=60&language=es`
         );
+
         setArticulos(datas.data.articles);
+        setResultados(datas.data);
       } catch (error) {
         console.error(error);
       }
@@ -67,29 +71,28 @@ function AppComponent() {
 
       <Container>
         <Row className="justify-content-md-center">
-          <Col xs="auto" lg="12">
-            <SearchComponent
-              search={search}
-              inputRef={inputRef}
-              inputButoon={inputButoon}
-              searchChange={heandleChange}
-              searchSubmit={heandleSutmit}
-              searchEnter={searchEnter}
-            />
-          </Col>
-          <Col xs="auto" lg="12">
-            <b>{!search ? <HomeComponent /> : ""} </b>
-          </Col>
-          <Col md="auto">
-            <div>{Londing ? <LondingComponent /> : ""} </div>
-          </Col>
-          <Col md="auto">
-            <ArticleComponent data={articulos} />
-          </Col>
+          <SearchComponent
+            inputRef={inputRef}
+            inputButoon={inputButoon}
+            searchChange={heandleChange}
+            searchSubmit={heandleSutmit}
+            searchEnter={searchEnter}
+          />
         </Row>
+
+        <Row className="justify-content-md-center">
+          <b>{!search ? <HomeComponent /> : ""} </b>
+        </Row>
+        <Col md="auto">
+          <div>{Londing ? <LondingComponent /> : ""} </div>
+        </Col>
+        <Col md="auto">
+          <p>se encontraron: {resultado.totalResults} Resultados</p>
+          <ArticleComponent data={articulos} />
+        </Col>
       </Container>
     </>
   );
 }
 
-export default AppComponent;
+export default MainComponent;
