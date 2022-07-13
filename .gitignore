@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-api.js
+/src/api.js
 # production
 /build
 
