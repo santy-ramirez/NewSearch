@@ -1,67 +1,75 @@
 //import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
 import image from "../home.jpg";
+import image2 from "../firtstep.gif";
+import image3 from "../secordstep.gif";
+import image4 from "../trestep.gif";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import FooterComponent from "./FooterComponent";
 
 function HeroComponent() {
   return (
     <>
       <Container>
         <Row>
-          <Col>
-            <h1>bienvenido</h1>
+          <Col md="12" lg="6">
+            <div className="description_hero">
+              <h1 className="title__one">welcome the </h1>
+              <h2 className="title__two">news search</h2>
+              <p>This web-app you cant the last news the worlk </p>
+              <Button className="desctiption__button">Get start</Button>
+            </div>
           </Col>
-          <Col>
-            <img width="300px" src={image} />
+          <Col md="12" lg="6">
+            <img className="hero__image" src={image} />
           </Col>
         </Row>
 
         <Row>
           <Col>
             <Card className="mx-auto my-4" style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Img variant="top" src={image2} />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>first step</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the cards content.
+                  click start, to start looking for the latest world news and
+                  find out everything.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
               </Card.Body>
             </Card>
           </Col>
 
           <Col>
             <Card className="mx-auto my-4" style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Img variant="top" src={image3} />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>second step</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the cards content.
+                  Write in the input , a word or phrase greater than three
+                  characters and click search.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card className="mx-auto my-4" style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Img variant="top" src={image4} />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>third step</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the cards content.
+                  Scroll through the news lists and click read if you are
+                  interested in news.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
+      <FooterComponent></FooterComponent>
     </>
   );
 }
