@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainComponent from "./components/MainComponent";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/search" element={<MainComponent />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

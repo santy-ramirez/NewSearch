@@ -10,6 +10,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import FooterComponent from "./FooterComponent";
+import { Link } from "react-router-dom";
 
 function HeroComponent() {
   return (
@@ -21,7 +22,9 @@ function HeroComponent() {
               <h1 className="title__one">welcome the </h1>
               <h2 className="title__two">news search</h2>
               <p>This web-app you cant the last news the worlk </p>
-              <Button className="desctiption__button">Get start</Button>
+              <Link to="/search">
+                <Button className="desctiption__button">Get start</Button>
+              </Link>
             </div>
           </Col>
           <Col md="12" lg="6">

@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import SearchComponent from "./SearchComponent";
-import HomeComponent from "./HomeComponent";
-import LondingComponent from "./LondingComponent";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import LondingComponent from "./LondingComponent";
 
 import axios from "axios";
 import api from "../api";
@@ -20,9 +19,6 @@ function MainComponent() {
   const [Londing, setLonding] = useState(false);
   const [articulos, setArticulos] = useState(list);
 
-  console.log("soy el search:" + search);
-  console.log(resultado.totalResults);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,13 +26,16 @@ function MainComponent() {
         const datas = await axios.get(
           `https://newsapi.org/v2/everything?q=${search}&apiKey=${api}&page=1&pageSize=60&language=es`
         );
-
-        setArticulos(datas.data.articles);
-        setResultados(datas.data);
+        let stados = datas.status;
+        console.log(stados);
+        if (stados == 200) {
+          setArticulos(datas.data.articles);
+          setResultados(datas.data);
+          setLonding(true);
+        }
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
-      setLonding(false);
     };
 
     fetchData();
@@ -55,12 +54,14 @@ function MainComponent() {
   };
   const heandleSutmit = (e) => {
     e.preventDefault();
-
+    setLonding(true);
     setSearch(inputRef.current.value);
+    setLonding(false);
   };
 
   const searchEnter = (e) => {
-    if (e.key === "Enter") {
+    const conter = e.target.value;
+    if (conter.length > 3 && e.key === "Enter") {
       setSearch(inputRef.current.value);
     }
   };
@@ -81,13 +82,15 @@ function MainComponent() {
         </Row>
 
         <Row className="justify-content-md-center">
-          <b>{!search ? <HomeComponent /> : ""} </b>
+          <div>{!Londing ? <LondingComponent /> : ""} </div>
         </Row>
+        <Col md="auto"></Col>
         <Col md="auto">
-          <div>{Londing ? <LondingComponent /> : ""} </div>
-        </Col>
-        <Col md="auto">
-          <p>se encontraron: {resultado.totalResults} Resultados</p>
+          <b>
+            {resultado.totalResults
+              ? "los resultado encontrados son:" + resultado.totalResults
+              : ""}
+          </b>
           <ArticleComponent data={articulos} />
         </Col>
       </Container>
