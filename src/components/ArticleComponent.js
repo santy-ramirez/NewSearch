@@ -16,12 +16,12 @@ function ArticleComponent(props) {
               className="justify-content-md-center article__container"
               key={a.url}
             >
-              <Col>
+              <Col lg="8">
                 <h1 className="article__title">{a.title}</h1>
                 <p className="article__parrafo">{a.content}</p>
                 <span> escrito por:{a.author} </span>
               </Col>
-              <Col md="3">
+              <Col lg="4">
                 <img className="article__image" src={a.urlToImage} />
               </Col>
             </Row>
