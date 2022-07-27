@@ -2,7 +2,7 @@
 
 ## Screenshop 
 
-![](https://github.com/santy-ramirez/assets/blob/main/screenshot_proyectos/new.gif)
+![image](https://github.com/santy-ramirez/assets/blob/main/screenshot_proyectos/new.gif)
 
 ## Link Demo 
 [hacer click aqui para verlo](https://new-search-three.vercel.app/)
