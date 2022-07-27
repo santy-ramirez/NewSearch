@@ -2,7 +2,11 @@
 
 ## Screenshop 
 
+<<<<<<< HEAD
 ![](imgreadme/new-min.gif)
+=======
+![image](https://github.com/santy-ramirez/assets/blob/main/screenshot_proyectos/new.gif)
+>>>>>>> 387b463145661f199d95b93d296d2d39766d2f63
 
 ## Link Demo 
 [hacer click aqui para verlo](https://new-search-three.vercel.app/)
