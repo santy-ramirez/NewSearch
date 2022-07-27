@@ -6,9 +6,10 @@ import Container from "react-bootstrap/Container";
 import LondingComponent from "./LondingComponent";
 
 import axios from "axios";
-import api from "../api";
+//import api from "../api";
 import ArticleComponent from "./PaginationComponent";
 import HeaderComponent from "./HeaderComponent";
+const api = process.env.REACT_APP_NEW_API_KEY;
 
 function MainComponent() {
   const list = [];
@@ -18,6 +19,7 @@ function MainComponent() {
   const [inputButoon, setInputButoon] = useState(true);
   const [Londing, setLonding] = useState(false);
   const [articulos, setArticulos] = useState(list);
+  console.log(api);
 
   useEffect(() => {
     const fetchData = async () => {
