@@ -1,4 +1,13 @@
-![](Aspose.Words.2eebda38-333a-4c33-bc9a-520cc8de8ca1.001.png)
+# New-app
+
+## Screenshop 
+
+![](https://github.com/santy-ramirez/assets/blob/main/screenshot_proyectos/new.gif)
+
+## Link Demo 
+[hacer click aqui para verlo](https://new-search-three.vercel.app/)
+
+## Requisitos del Prroyecto:
 
 Un cliente nos ha solicitado la construcción de un buscador de noticias. Para el cual se ![](Aspose.Words.2eebda38-333a-4c33-bc9a-520cc8de8ca1.002.jpeg)provee el siguiente mockup inicial:
 

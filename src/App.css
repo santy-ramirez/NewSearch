@@ -88,9 +88,16 @@ border-radius: 8px;
   color: var(--white);
 }
 .article__container{
-  padding: 3rem 0;
+  padding: 1rem 0;
+  border: 1px rgb(206, 203, 203) solid;
+  margin: 2rem 0;
 
 
+}
+.article__container:hover{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(87,87,87,0.53);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(87,87,87,0.53);
+  box-shadow: 10px 10px 5px 0px rgba(87,87,87,0.53)
 }
 .article__image{
   width: 100%;
@@ -110,7 +117,7 @@ border-radius: 8px;
 }
 .article__link:hover{
   text-decoration: none;
-  color: var(--glaucous);
+  color: black;
 }
 .pagination{
   list-style: none;
