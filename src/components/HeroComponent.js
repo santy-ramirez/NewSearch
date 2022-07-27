@@ -1,9 +1,9 @@
 //import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
-import image from "../home.jpg";
-import image2 from "../firtstep.gif";
-import image3 from "../secordstep.gif";
-import image4 from "../trestep.gif";
+import image from "../home-min.jpg";
+import image2 from "../firtstep-min.gif";
+import image3 from "../secordstep-min.gif";
+import image4 from "../trestep-min.gif";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

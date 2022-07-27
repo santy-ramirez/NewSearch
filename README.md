@@ -2,7 +2,7 @@
 
 ## Screenshop 
 
-![](https://github.com/santy-ramirez/assets/blob/main/screenshot_proyectos/new.gif)
+![](imgreadme/new-min.gif)
 
 ## Link Demo 
 [hacer click aqui para verlo](https://new-search-three.vercel.app/)
@@ -11,7 +11,7 @@
 
 Un cliente nos ha solicitado la construcción de un buscador de noticias. Para el cual se ![](Aspose.Words.2eebda38-333a-4c33-bc9a-520cc8de8ca1.002.jpeg)provee el siguiente mockup inicial:
 
-![](imgreadme/Aspose.Words.2eebda38-333a-4c33-bc9a-520cc8de8ca1.003.jpeg)
+![](c/Aspose.Words.2eebda38-333a-4c33-bc9a-520cc8de8ca1.003.jpeg)
 
 Cuando el usuario realiza una búsqueda, se deben aplicar las siguientes validaciones sobre el input:
 
