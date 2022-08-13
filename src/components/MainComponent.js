@@ -51,7 +51,7 @@ function MainComponent() {
             "ya no puedes hacer peticiones con el plan free,lo sentimos!!"
           );
         } else {
-          setError("error");
+          setError("");
         }
       }
     };
@@ -73,6 +73,7 @@ function MainComponent() {
   const heandleSutmit = (e) => {
     e.preventDefault();
     setLonding(true);
+
     setSearch(inputRef.current.value);
     setLonding(false);
   };
