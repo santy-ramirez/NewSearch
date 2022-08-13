@@ -19,7 +19,7 @@ function MainComponent() {
   const [inputButoon, setInputButoon] = useState(true);
   const [Londing, setLonding] = useState(false);
   const [articulos, setArticulos] = useState(list);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   console.log(api);
 
   useEffect(() => {
@@ -31,19 +31,27 @@ function MainComponent() {
         );
         let stados = datas.status;
         console.log(stados);
-        if (stados == 200) {
-          setArticulos(datas.data.articles);
-          setResultados(datas.data);
-          setLonding(true);
-        }
+
+        setArticulos(datas.data.articles);
+        setResultados(datas.data);
+        setLonding(true);
       } catch (error) {
         // eslint-disable-next-line no-constant-condition
-        if ((error.response.status = 400)) {
+        if (error.response.status === 400) {
           setError(
             "tipea algo correcto,una palabra mayor a 3 caracteres por favor"
           );
-        } else {
+        }
+        // eslint-disable-next-line no-constant-condition
+        if (error.response.status === 426) {
           setError("ha ocurrido un error comunicate con soporte");
+        }
+        if (error.response.status === 429) {
+          setError(
+            "ya no puedes hacer peticiones con el plan free,lo sentimos!!"
+          );
+        } else {
+          setError("");
         }
       }
     };
@@ -93,7 +101,7 @@ function MainComponent() {
 
         <Row className="justify-content-md-center">
           <div>{!Londing ? <LondingComponent /> : ""} </div>
-          <div> {error} </div>
+          <div> {error ? error : ""} </div>
         </Row>
         <Col md="auto"></Col>
         <Col md="auto">
