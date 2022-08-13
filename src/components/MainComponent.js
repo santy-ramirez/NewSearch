@@ -34,7 +34,6 @@ function MainComponent() {
 
         setArticulos(datas.data.articles);
         setResultados(datas.data);
-
         setLonding(false);
       } catch (error) {
         // eslint-disable-next-line no-constant-condition
@@ -52,13 +51,13 @@ function MainComponent() {
             "ya no puedes hacer peticiones con el plan free,lo sentimos!!"
           );
         } else {
-          setError("");
+          setError("error");
         }
       }
     };
 
     fetchData();
-  }, [search, error]);
+  }, [search]);
 
   const heandleChange = () => {
     let esa = inputRef.current.value;
