@@ -31,10 +31,12 @@ function MainComponent() {
         );
         let stados = datas.status;
         console.log(stados);
+        if (stados === 200) {
+          setArticulos(datas.data.articles);
+          setResultados(datas.data);
+        }
 
-        setArticulos(datas.data.articles);
-        setResultados(datas.data);
-        setLonding(true);
+        setLonding(false);
       } catch (error) {
         // eslint-disable-next-line no-constant-condition
         if (error.response.status === 400) {
@@ -100,7 +102,7 @@ function MainComponent() {
         </Row>
 
         <Row className="justify-content-md-center">
-          <div>{!Londing ? <LondingComponent /> : ""} </div>
+          <div>{Londing ? <LondingComponent /> : ""} </div>
           <div> {error ? error : ""} </div>
         </Row>
         <Col md="auto"></Col>
