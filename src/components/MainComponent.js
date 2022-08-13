@@ -19,6 +19,7 @@ function MainComponent() {
   const [inputButoon, setInputButoon] = useState(true);
   const [Londing, setLonding] = useState(false);
   const [articulos, setArticulos] = useState(list);
+  const [error, setError] = useState(null);
   console.log(api);
 
   useEffect(() => {
@@ -36,12 +37,19 @@ function MainComponent() {
           setLonding(true);
         }
       } catch (error) {
-        console.log(error);
+        // eslint-disable-next-line no-constant-condition
+        if ((error.response.status = 400)) {
+          setError(
+            "tipea algo correcto,una palabra mayor a 3 caracteres por favor"
+          );
+        } else {
+          setError("ha ocurrido un error comunicate con soporte");
+        }
       }
     };
 
     fetchData();
-  }, [search]);
+  }, [search, error]);
 
   const heandleChange = () => {
     let esa = inputRef.current.value;
@@ -85,6 +93,7 @@ function MainComponent() {
 
         <Row className="justify-content-md-center">
           <div>{!Londing ? <LondingComponent /> : ""} </div>
+          <div> {error} </div>
         </Row>
         <Col md="auto"></Col>
         <Col md="auto">
