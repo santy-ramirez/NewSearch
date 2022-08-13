@@ -1,14 +1,5 @@
 # New-app
 
-## Screenshop 
-
-![image](imgreadme/Untitled.webm)
-
-
-
-## Link Demo 
-[hacer click aqui para verlo](https://new-search-three.vercel.app/)
-
 ## Requisitos del Prroyecto:
 
 Un cliente nos ha solicitado la construcción de un buscador de noticias. Para el cual se ![](Aspose.Words.2eebda38-333a-4c33-bc9a-520cc8de8ca1.002.jpeg)provee el siguiente mockup inicial:
@@ -35,6 +26,15 @@ Por cada noticia obtenida, se debe presentar :
 - La fecha de publicación de la noticia en formato:dd-mm-aaaa - hh:mm hs. Ejemplo:***Publicado el: 28-06-2022 a las 03:00 hs***.(Para esto valerse de la librería Luxon Date: https://moment.github.io/luxon/#/?id=luxon).
 - Cuando el usuario haga click sobre una noticia, la misma deberá de abrirse en una nueva pestaña.
 
+
+## Screenshop 
+
+![image](imgreadme/new-min.gif)
+
+
+
+## Link Demo 
+[hacer click aqui para verlo](https://new-search-three.vercel.app/)
 
 
 
